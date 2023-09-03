@@ -1,0 +1,130 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+:root {
+    --bg: #191A19;
+    --textPrimary: #4E9F3D;
+    --destaque: #4E9F3D;
+    --destaqueTranslucide: #4d9f3d5e;
+}
+
+
+body {
+    width: 100%;
+    height: 100%;
+
+    background-color: var(--bg);
+    color: var(--textPrimary);
+
+    display: flex;
+    flex-direction: column;
+    gap: 3rem 0;
+
+    padding: 0 5rem;
+}
+
+
+header {
+    width: 100%; 
+    margin-top: 1rem;
+}
+
+header h1 {
+    text-align: center;
+    text-shadow: 0 0 7px var(--textPrimary);
+}
+
+main {
+    position: relative;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+    grid-template-rows: auto;
+    gap: 2rem;
+}
+
+.box {
+    position: relative;
+    height: 360px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border: 1px solid var(--destaque);
+    transition: 0.3s;
+}
+
+.box button {
+    position: absolute;
+    bottom: 20px;
+    width: 30%;
+    outline: none;
+
+    color: var(--textPrimary);
+    background-color: transparent;
+    border: 1px solid var(--destaque);
+ 
+    padding: 0.5rem 0.9rem;
+    border-radius: 8px; 
+    transition: 0.3s all ease-in-out;
+}
+
+.box .content {
+    position: relative;
+    display: flex;
+    height: 50%;
+
+    flex-direction: column;
+    gap: 0.3rem;
+    padding: 20px;
+}
+
+
+.box .content h2 {
+    position: absolute;
+    top: -70px;
+    right: 20px;
+    font-size: 9em;
+
+    color: rgba(255, 255, 255, 0.048);
+    transition: 0.3s;
+}
+
+.box .content p span {
+    position: absolute;
+    font-size: 1em;
+    margin-top: 0.3rem;
+
+    color: rgba(255, 255, 255, 0.267);
+    transition: 0.3s;
+}
+
+.box:hover {
+    box-shadow: inset 0px 0px 25px 2px var(--destaqueTranslucide);
+    cursor: pointer;
+}
+
+.box:hover .content h2 {
+    top: -120px;
+}
+
+.box:hover button  {
+    width: 40%;
+    cursor: pointer;
+}
+
+
+.box button:hover  {
+    background-color: var(--destaque);
+    color: black;
+}
+
+.box .content h3 {
+    font-size: 2em;
+}

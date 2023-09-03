@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bomba Relogio</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        const Sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
+
+        const timer = document.getElementById('stats')
+        const IniciarContagem = async () => {
+            document.write("Você tem 30 segundos para sair da página ou será responsavel por uma catástrofe")
+            await Sleep(500)
+            for (let i = 30; i >= 0; i--) {
+                await Sleep(150)
+                document.body.innerHTML = ""
+                document.write(`<h3>${i}</h3>`)
+                const body = document.getElementsByTagName("body")[0]
+                const h3 = document.getElementsByTagName("h3")[0]
+                body.style.display = "flex"
+                body.style.justifyContent = "center"
+                body.style.alignItems = "center"
+                body.style.backgroundColor = "#191A19"
+                h3.style.color = "#4E9F3D"
+                h3.style.fontSize = "3em"
+            }
+
+            document.body.innerHTML = ""
+            document.write("<h2>Bom eu lamento...</h2>")
+            const h2 = document.getElementsByTagName("h2")[0]
+            h2.style.color = "#4E9F3D"
+            h2.style.fontSize = "3em"
+
+            await Sleep(700)
+            document.body.innerHTML = ""
+            document.write("<h3>EXPLOSÃO</h3>")
+            const h3 = document.getElementsByTagName("h3")[0]
+            h3.style.color = "#4E9F3D"
+            h3.style.fontSize = "3em"
+        }
+
+        IniciarContagem()
+
+
+    </script>
+</body>
+
+</html>
